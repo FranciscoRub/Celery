@@ -1,0 +1,54 @@
+!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Lista de slangs</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <header class="header--one card">
+          <a class="linkBack" href="/"
+            ><i class="fas fa-arrow-left"></i> Volver</a
+          >
+          <h1>
+           Lista de Slangs
+            <span> <i class="fa fa-book book--icon"></i></span>
+          </h1>
+        </header>
+
+        <div class="form-box">
+          <div class="form-box--img">
+            <img
+              src="{{url_for('static', filename='img/addWord-pic.svg')}}"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <div class="palabras-layout">
+              <p class="palabra palabraHeader">Slang</p>
+              <p class="definicion definicionHeader">Significado</p>
+              {% for palabra in palabras %}
+              <p class="palabra">{{palabra["name"]}}:</p>
+
+              <p class="definicion">{{Slang["Significado"]}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

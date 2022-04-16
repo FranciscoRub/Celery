@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='main.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  /> 
+
+    <title>Agregar Nueva Palabra al Diccionario</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <header class="header--one card">
+          <a class="linkBack" href="/"
+            ><i class="fas fa-arrow-left"></i> Volver</a
+          >
+          <h1>
+            Agregar Nueva Palabra al Diccionario
+            <span> <i class="fa fa-book"></i></span>
+          </h1>
+        </header>
+
+        <div class="form-box">
+          <div class="form-box--img">
+            <img
+              src="{{url_for('static', filename='img/addWord-pic.svg')}}"
+              alt=""
+            />
+          </div>
+          <form action="" class="form-box-inputs" method="POST">
+            <div class="box">
+              <p class="message">{{message}}</p>
+              <div>
+                <label for="">Slang</label>
+                <input type="text" name="word" />
+              </div>
+              <div>
+                <label for="">Significado</label>
+                <textarea name="meaning" id="" rows="10"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Añadir Palabra</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<head>
+  <style>

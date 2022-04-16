@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Eliminar Slang</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <header class="header--one card">
+          <a class="linkBack" href="/"
+            ><i class="fas fa-arrow-left"></i> Volver</a
+          >
+          <h1>
+            
+            <span> <i class="fa fa-book book--icon"></i></span>
+          </h1>
+        </header>
+
+        <div id="form-box">
+          <div class="form-box--img">
+            <img
+              src="{{url_for('static', filename='img/addWord-pic.svg')}}"
+              alt=""
+            />
+          </div>
+          <form action="" class="form-box-inputs" method="POST">
+            <div class="box">
+              {% if message %}
+              <p class="message">
+                El slang no existe <i class="fas fa-frown-open"></i>
+              </p>
+              {% endif %} {% if message == False %}
+              <p class="message">
+                slang eliminado <i class="fas fa-smile-beam"></i>
+              </p>
+              {% endif %}
+              <div>
+                <label for="">Slang a eliminar</label>
+                <input type="text" name="word" />
+              </div>
+              <button
+                onclick="(e) => e.preventDefault()"
+                type="submit"
+                class="btn-submit"
+              >
+                Eliminar Slang
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<head>
+  <style>
